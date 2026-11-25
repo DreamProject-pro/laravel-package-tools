@@ -11,16 +11,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
           ref: ${{ github.head_ref }}
 
       - name: Run PHP CS Fixer
-        uses: docker://oskarstark/php-cs-fixer-ga
+        uses: docker://oskarstark/php-cs-fixer-ga@sha256:83a770c6ff81cb939a54e57eca81cf95df4012a95a82823c8dbf0af88037426d
         with:
           args: --config=.php-cs-fixer.dist.php --allow-risky=yes
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@3ea6ae190baf489ba007f7c92608f33ce20ef04a # v4.16.0
         with:
           commit_message: Fix styling
